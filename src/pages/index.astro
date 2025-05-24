@@ -1,6 +1,75 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Terminal from "@/components/Terminal.astro";
+import ServiceItem from "@/components/ServiceItem.astro";
 ---
 
 <Layout>
+  <div class="min-h-screen flex flex-col justify-between">
+    <Navbar />
+    <main class="flex-1">
+      <section class="grid lg:grid lg:grid-cols-2 p-4 pt-6 gap-8 lg:pt-30">
+        <div class="flex flex-col gap-6 items-center">
+          <h2
+            class="text-6xl lg:text-7xl font-bold tracking-wide text-center text-white"
+          >
+            Welcome to CodeLab <span class="text-yellow-200"
+              >{`{Developers}`}</span
+            >
+          </h2>
+          <p class="text-white text-lg max-w-2/3 text-center">
+            Programming tools or software development tools are computer
+            programs that software developers use to create, debug, maintain, or
+            support other programs and applications.
+          </p>
+          <button
+            class="text-xl bg-gradient-to-bl
+            from-yellow-400 to-red-500
+            text-white font-bold py-2 px-4 rounded-xl
+            hover:bg-gradient-to-b
+            hover:text-white lg:self-center"
+            >Get Started</button
+          >
+        </div>
+        <div class="w-full">
+          <Terminal />
+        </div>
+      </section>
+      <section class="grid lg:grid-cols-3 gap-4 p-4 mt-12">
+        <ServiceItem
+          title="Real Problems"
+          desc="Aliquam platea blandit sit etiam conubia semean futos feugiat, proin leo ante etiam lobortis."
+          img="/img/real-problems.png"
+        />
+        <ServiceItem
+          title="Empowered By Innovation"
+          desc="Aliquam platea blandit sit etiam conubia semean futos feugiat, proin leo ante etiam lobortis."
+          img="/img/real-problems.png"
+        />
+        <ServiceItem
+          title="The Future is Fusion"
+          desc="Aliquam platea blandit sit etiam conubia semean futos feugiat, proin leo ante etiam lobortis."
+          img="/img/real-problems.png"
+        />
+      </section>
+    </main>
+    <footer class="text-center p-2">THIS IS MADE BY ME</footer>
+  </div>
 </Layout>
+
+<script>
+  javascript: (function () {
+    var rbh = document.getElementById("red-border-hack");
+    if (rbh) {
+      rbh.remove();
+    } else {
+      rbh = document.createElement("style");
+      rbh.setAttribute("id", "red-border-hack");
+      var css = "* { box-shadow: inset 0px 0px 0px 1px red !important; }";
+      rbh.appendChild(document.createTextNode(css));
+      var head = document.getElementsByTagName("head")[0];
+      head.appendChild(rbh);
+    }
+  });
+</script>
